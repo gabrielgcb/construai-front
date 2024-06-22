@@ -1,0 +1,72 @@
+@import "../../../styles/variables.scss";
+
+main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    .form-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+
+        h1 {
+            color: $primary-color;
+            text-align: center;
+            font-family: "Poppins", sans-serif;
+            font-size: 48px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            margin-bottom: 40px;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+
+        .input-wrapper {
+            display: flex;
+            flex-direction: column;
+            margin: 20px 0;
+            font-family: "Roboto", sans-serif;
+            font-weight: 700;
+            color: $text-color;
+            gap: 10px;
+
+            input {
+                padding: 12px 0 12px 20px;
+                width: 100%;
+                border-radius: 5px;
+                border: 2px solid $text-color;
+                background-color: #FFF;
+
+                &:hover {
+                    border: 2px solid $primary-color;
+                }
+            }
+        }
+        
+        button {
+            width: 100%;
+            border-radius: 5px;
+            background: $primary-color;
+            padding: 12px 24px;
+            border: none;
+            font-family: "Poppins", sans-serif;
+            color: #FFF;
+            text-align: center;
+            font-size: 12px;
+            font-style: normal;
+            font-weight: 700;
+            line-height: normal;
+            cursor: pointer;
+        }
+    }
+}
