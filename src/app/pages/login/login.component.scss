@@ -85,11 +85,12 @@ main {
             justify-content: space-between;
             margin-bottom: 20px;
             width: 100%;
+            font-size: 16px;
+
             
             .save-password {
                 color: #666671;
                 font-family: 'Roboto', sans-serif;
-                font-size: 16px;
                 font-style: normal;
                 font-weight: 400;
                 line-height: normal;
@@ -110,6 +111,13 @@ main {
                 &:hover {
                     text-decoration: underline;
                 }
+            }
+
+        }
+
+        @media(max-width: 630px) {
+            .password-options {
+                font-size: 12px;
             }
         }
         
