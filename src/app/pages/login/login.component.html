@@ -5,13 +5,50 @@
             <form [formGroup]="loginForm">
                 <div class="input-wrapper">
                     <label for="email">Email</label>
-                    <input type="text" id="login" placeholder="Login">
+                    <input type="text" id="email" placeholder="" formControlName="email">
+                    @if(loginForm.get('email')?.errors && loginForm.get('email')?.touched) {
+                        @if(loginForm.get('nome')?.errors?.['required']) {
+                            <div class="mensagem-erro">
+                                Campo obrigatório
+                            </div>
+                        }
+                        @if(loginForm.get('email')?.errors?.['email']) {
+                            <div class="mensagem-erro">
+                                Email inválido
+                            </div>
+                        }
+                    }
                 </div>
                 <div class="input-wrapper">
-                    <label for="password">Senha</label>
-                    <input type="password" id="password" placeholder="********">
+                    <div class="input-password">
+                        <label for="password">Senha</label>
+                        <input type="password" id="password" placeholder formControlName="password">
+                        <span class="toggle-password">
+                            <img src="/assets/eye-outline.png" alt="">
+                        </span>
+                    </div>
+                    @if(loginForm.get('password')?.errors && loginForm.get('password')?.touched) {
+                        @if(loginForm.get('password')?.errors?.['required']) {
+                            <div class="mensagem-erro">
+                                Campo obrigatório
+                            </div>
+                        }
+                        @if(loginForm.get('password')?.errors?.['minlength']) {
+                            <div class="mensagem-erro">
+                                A senha precisa ter, no mínimo, 6 caracteres
+                            </div>
+                        }
+                    }
                 </div>
             </form>
+            <div class="password-options">
+                <span class="save-password">
+                    <input type="checkbox" name="save-password" id="save-password"> Salvar senha
+                </span>
+                <span class="forgot-password">
+                    Esqueceu a senha?
+                </span>
+            </div>
             <button type="button">Entrar</button>
         </section>
     </main>
