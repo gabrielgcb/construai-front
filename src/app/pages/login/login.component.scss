@@ -129,8 +129,15 @@ main {
             line-height: normal;
             cursor: pointer;
 
-            &:hover {
-                background-color: rgba($primary-color, 0.8);
+            &:disabled {
+                opacity: 0.6;
+                cursor: not-allowed;
+            }
+
+            &:enabled {
+                &:hover {
+                    background-color: rgba($primary-color, 0.8);
+                }
             }
         }
     }

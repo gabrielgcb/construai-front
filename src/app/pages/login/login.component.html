@@ -49,7 +49,10 @@
                     Esqueceu a senha?
                 </span>
             </div>
-            <button type="button">Entrar</button>
+            <button 
+                [disabled]="loginForm.invalid"
+                type="button" (click)="submit()">Entrar
+            </button>
         </section>
     </main>
 </app-container>
